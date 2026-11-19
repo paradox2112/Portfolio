@@ -1,128 +1,183 @@
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #080B12;
-  color: #E8F1FA;
-  line-height: 1.6;
+    font-family: Arial, sans-serif;
+    background: #080B12;
+    color: #E8F1FA;
+    line-height: 1.6;
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 8%;
-  background: #0D1420;
-  position: sticky;
-  top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #0D1420;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #26364A;
 }
 
 nav h2 {
-  color: #00D9FF;
+    color: #00D9FF;
+    letter-spacing: 2px;
 }
 
-nav a {
-  color: #E8F1FA;
-  text-decoration: none;
-  margin-left: 20px;
+.nav-links a {
+    color: #E8F1FA;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s;
 }
 
-nav a:hover {
-  color: #00D9FF;
+.nav-links a:hover {
+    color: #00D9FF;
 }
 
 section {
-  padding: 80px 8%;
+    padding: 80px 8%;
 }
 
 .hero {
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.tag {
+    color: #00D9FF;
+    letter-spacing: 3px;
+    font-size: 13px;
 }
 
 .hero h1 {
-  font-size: 48px;
+    font-size: 55px;
+    margin: 10px 0;
 }
 
-.hero span {
-  color: #00D9FF;
+.hero h1 span {
+    color: #00D9FF;
+}
+
+.hero h2 {
+    color: #A7B6C8;
+    font-size: 25px;
 }
 
 .hero p {
-  color: #A7B6C8;
-  margin: 15px 0;
+    margin: 15px 0;
+    color: #A7B6C8;
 }
 
-button {
-  background: #00D9FF;
-  color: #080B12;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
+.btn {
+    display: inline-block;
+    background: #00D9FF;
+    color: #080B12;
+    padding: 12px 25px;
+    margin-top: 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-button:hover {
-  background: #8CEEFF;
+.btn:hover {
+    background: #8CEEFF;
+    transform: translateY(-3px);
 }
 
-h2 {
-  margin-bottom: 20px;
-  color: #00D9FF;
+.section-title {
+    color: #00D9FF;
+    font-size: 30px;
+    margin-bottom: 30px;
 }
 
-p {
-  color: #B7C5D6;
+.about-card {
+    background: #151D2B;
+    padding: 30px;
+    border: 1px solid #26364A;
+    border-radius: 12px;
 }
 
-.skills, .projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
+.about-card p {
+    color: #B7C5D6;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.card, .project-card {
+    background: #151D2B;
+    padding: 25px;
+    border: 1px solid #26364A;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
 .card {
-  background: #151D2B;
-  padding: 25px;
-  border: 1px solid #26364A;
-  border-radius: 10px;
-  transition: 0.3s;
+    text-align: center;
+    font-weight: bold;
 }
 
-.card:hover {
-  border-color: #00D9FF;
-  transform: translateY(-5px);
+.card:hover, .project-card:hover {
+    border-color: #00D9FF;
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    color: #00D9FF;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: #A7B6C8;
 }
 
 footer {
-  text-align: center;
-  padding: 25px;
-  background: #0D1420;
-  color: #718096;
+    text-align: center;
+    padding: 25px;
+    background: #0D1420;
+    border-top: 1px solid #26364A;
+    color: #718096;
 }
 
 @media (max-width: 600px) {
-  nav {
-    flex-direction: column;
-    gap: 15px;
-  }
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
 
-  .hero h1 {
-    font-size: 34px;
-  }
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
 
-  nav a {
-    margin: 0 8px;
-  }
+    .nav-links a {
+        margin: 0;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
 }
