@@ -3,49 +3,54 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
     scroll-behavior: smooth;
 }
 
 body {
+    background: #0b0b12;
+    color: #f5f5f5;
     font-family: Arial, sans-serif;
-    background: #080B12;
-    color: #E8F1FA;
-    line-height: 1.6;
+    line-height: 1.7;
+}
+
+span {
+    color: #a78bfa;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 8%;
-    background: #0D1420;
+    padding: 22px 8%;
+    background: #11111b;
     position: sticky;
     top: 0;
-    z-index: 100;
-    border-bottom: 1px solid #26364A;
+    z-index: 10;
 }
 
 nav h2 {
-    color: #00D9FF;
     letter-spacing: 2px;
 }
 
-.nav-links a {
-    color: #E8F1FA;
-    text-decoration: none;
-    margin-left: 20px;
-    transition: 0.3s;
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
 }
 
-.nav-links a:hover {
-    color: #00D9FF;
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #a78bfa;
 }
 
 section {
-    padding: 80px 8%;
+    padding: 90px 10%;
+    text-align: center;
 }
 
 .hero {
@@ -53,40 +58,38 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    background: radial-gradient(circle, #252044, #0b0b12 65%);
 }
 
 .tag {
-    color: #00D9FF;
+    color: #a78bfa;
     letter-spacing: 3px;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .hero h1 {
-    font-size: 55px;
-    margin: 10px 0;
-}
-
-.hero h1 span {
-    color: #00D9FF;
+    font-size: clamp(38px, 6vw, 65px);
+    margin: 15px 0;
 }
 
 .hero h2 {
-    color: #A7B6C8;
-    font-size: 25px;
+    color: #ccc;
+    font-size: 23px;
+    margin-bottom: 15px;
 }
 
 .hero p {
-    margin: 15px 0;
-    color: #A7B6C8;
+    max-width: 550px;
+    color: #aaa;
 }
 
 .btn {
     display: inline-block;
-    background: #00D9FF;
-    color: #080B12;
+    background: #a78bfa;
+    color: #111;
     padding: 12px 25px;
-    margin-top: 15px;
+    margin-top: 25px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
@@ -94,90 +97,77 @@ section {
 }
 
 .btn:hover {
-    background: #8CEEFF;
-    transform: translateY(-3px);
+    background: #c4b5fd;
+    transform: translateY(-4px);
 }
 
-.section-title {
-    color: #00D9FF;
-    font-size: 30px;
-    margin-bottom: 30px;
+section h2 {
+    font-size: 35px;
+    margin-bottom: 25px;
 }
 
-.about-card {
-    background: #151D2B;
-    padding: 30px;
-    border: 1px solid #26364A;
-    border-radius: 12px;
+section p {
+    color: #aaa;
+    max-width: 650px;
+    margin: 10px auto;
 }
 
-.about-card p {
-    color: #B7C5D6;
+#about, #projects {
+    background: #11111b;
 }
 
-.grid {
+.cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    margin-top: 30px;
 }
 
-.card, .project-card {
-    background: #151D2B;
-    padding: 25px;
-    border: 1px solid #26364A;
+.card {
+    background: #191927;
+    padding: 30px 20px;
+    border: 1px solid #29293b;
     border-radius: 10px;
     transition: 0.3s;
 }
 
-.card {
-    text-align: center;
-    font-weight: bold;
+.card:hover {
+    transform: translateY(-7px);
+    border-color: #a78bfa;
 }
 
-.card:hover, .project-card:hover {
-    border-color: #00D9FF;
-    transform: translateY(-5px);
-}
-
-.project-card h3 {
-    color: #00D9FF;
-    margin-bottom: 10px;
-}
-
-.project-card p {
-    color: #A7B6C8;
+.card p {
+    font-size: 14px;
 }
 
 footer {
     text-align: center;
     padding: 25px;
-    background: #0D1420;
-    border-top: 1px solid #26364A;
-    color: #718096;
+    background: #11111b;
+    border-top: 1px solid #29293b;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
     nav {
         flex-direction: column;
         gap: 15px;
     }
 
-    .nav-links {
-        display: flex;
+    nav ul {
+        gap: 12px;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 12px;
     }
 
-    .nav-links a {
-        margin: 0;
-    }
-
-    .hero h1 {
-        font-size: 38px;
+    .cards {
+        grid-template-columns: 1fr;
     }
 
     section {
-        padding: 60px 6%;
+        padding: 65px 7%;
+    }
+
+    .hero h2 {
+        font-size: 19px;
     }
 }
